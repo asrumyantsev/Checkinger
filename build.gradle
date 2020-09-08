@@ -6,7 +6,7 @@ plugins {
 
 group = 'pro.sofix'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = '14'
 
 configurations {
     compileOnly {
@@ -36,6 +36,10 @@ dependencies {
     }
     testImplementation 'io.projectreactor:reactor-test'
     testImplementation 'org.springframework.amqp:spring-rabbit-test'
+    compile group: 'org.telegram', name: 'telegrambots-spring-boot-starter', version: '4.9.1'
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
+
+
 }
 
 test {
