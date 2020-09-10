@@ -33,14 +33,9 @@ public class Botconfig {
     public Telegrambot TmWhBot() {
         DefaultBotOptions options = ApiContext.getInstance(DefaultBotOptions.class);
 
-        options.setProxyHost(proxyHost);
-        options.setProxyPort(proxyPort);
-        options.setProxyType(proxyType);
-
             Telegrambot tmWebhookBot = new Telegrambot(options);
             tmWebhookBot.setUsername(botUserName);
             tmWebhookBot.setBottoken(botToken);
-
             tmWebhookBot.setWebhook(webHookPath);
 
         return tmWebhookBot;
