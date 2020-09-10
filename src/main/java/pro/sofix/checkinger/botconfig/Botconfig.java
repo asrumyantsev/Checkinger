@@ -1,13 +1,11 @@
 package pro.sofix.checkinger.botconfig;
 
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Bean;
-
+import org.springframework.context.annotation.Configuration;
 import org.telegram.telegrambots.bots.DefaultBotOptions;
 import org.telegram.telegrambots.meta.ApiContext;
 import pro.sofix.checkinger.bot.Telegrambot;
@@ -27,8 +25,6 @@ public class Botconfig {
     private String proxyHost;
     private int proxyPort;
 
-
-
     @Bean
     public Telegrambot TmWhBot() {
         DefaultBotOptions options = ApiContext.getInstance(DefaultBotOptions.class);
@@ -40,6 +36,5 @@ public class Botconfig {
 
         return tmWebhookBot;
     }
-
 
 }
