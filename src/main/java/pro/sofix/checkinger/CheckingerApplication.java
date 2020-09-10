@@ -8,7 +8,7 @@ import org.telegram.telegrambots.ApiContextInitializer;
 public class CheckingerApplication {
 
     public static void main(String[] args) {
-        ApiContextInitializer.init();
+        //ApiContextInitializer.init();
         SpringApplication.run(CheckingerApplication.class, args);
     }
 

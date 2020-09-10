@@ -2,20 +2,23 @@ package pro.sofix.checkinger.botconfig;
 
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Bean;
 
 import org.telegram.telegrambots.bots.DefaultBotOptions;
 import org.telegram.telegrambots.meta.ApiContext;
-import pro.sofix.checkinger.bot.tmbot;
+import pro.sofix.checkinger.bot.Telegrambot;
 
 
-@Data
+@Getter
+@Setter
 @Configuration
 @ConfigurationProperties (prefix = "telegrambot")
 
-public class botconfig {
+public class Botconfig {
     private String webHookPath;
     private String botUserName;
     private String botToken;
@@ -27,19 +30,20 @@ public class botconfig {
 
 
     @Bean
-    public tmbot TmWhBot(){
+    public Telegrambot TmWhBot() {
         DefaultBotOptions options = ApiContext.getInstance(DefaultBotOptions.class);
 
         options.setProxyHost(proxyHost);
         options.setProxyPort(proxyPort);
         options.setProxyType(proxyType);
-            tmbot tmwebhookbot = new tmbot(options);
 
-            tmwebhookbot.setWebhook(webHookPath);
-            tmwebhookbot.setBottoken(botToken);
-            tmwebhookbot.setUsername(botUserName);
+            Telegrambot tmWebhookBot = new Telegrambot(options);
+            tmWebhookBot.setUsername(botUserName);
+            tmWebhookBot.setBottoken(botToken);
 
-        return tmwebhookbot;
+            tmWebhookBot.setWebhook(webHookPath);
+
+        return tmWebhookBot;
     }
 
 

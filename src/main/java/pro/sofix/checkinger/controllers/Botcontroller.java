@@ -7,15 +7,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
 import org.telegram.telegrambots.meta.api.objects.Update;
-import pro.sofix.checkinger.bot.tmbot;
+import pro.sofix.checkinger.bot.Telegrambot;
 
 
 @RestController
-public class botcontroller {
+public class Botcontroller {
 
-    private final tmbot telegramBot;
+    private final Telegrambot telegramBot;
 
-    public botcontroller(tmbot telegramBot) {
+    public Botcontroller(Telegrambot telegramBot) {
         this.telegramBot = telegramBot;
     }
 
