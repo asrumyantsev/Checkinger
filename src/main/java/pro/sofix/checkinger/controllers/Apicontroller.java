@@ -33,7 +33,7 @@ public class Apicontroller {
         System.out.println("Message send");
         System.out.println(messageText);
 
-            telegramBot.sendMessageToBot("",messageText);
+            telegramBot.sendMessageToBot("129767120",messageText);
             return "Done";
     }
     
