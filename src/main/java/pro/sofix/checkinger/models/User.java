@@ -12,13 +12,12 @@ import java.util.UUID;
 @Entity
 
 public class User {
-
-
     @Id
     @GeneratedValue
     private UUID id;
     private String name;
     private String email;
-
-
+    private String chatid;
+    private String phone;
+    private String comment;
 }
