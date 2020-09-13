@@ -17,8 +17,6 @@ public class Telegrambot extends TelegramWebhookBot {
         super(botOptions);
     }
 
-
-
     @Override
     public BotApiMethod onWebhookUpdateReceived(Update update) {
 
@@ -36,6 +34,7 @@ public class Telegrambot extends TelegramWebhookBot {
         return null;
     }
 
+    //Попробовать добавить override
     public SendMessage sendMessageToBot(String chatId, String messageText){
         try {
             execute(new SendMessage(chatId, messageText));
